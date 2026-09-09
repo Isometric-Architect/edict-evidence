@@ -1,0 +1,104 @@
+{
+  "case_id": "csv-null-empty-python-pair-001",
+  "status": "SCOPED_REFERENCE_OBSERVATIONS",
+  "question": "When can a Python CSV writer/reader pair distinguish missing input from an empty string?",
+  "input_kind": "the bundled five-row, two-column synthetic text/null fixture only",
+  "observed_runtime": {
+    "python": "3.13.5",
+    "os": "Linux x86_64",
+    "observation_date": "2026-09-07"
+  },
+  "observations": [
+    {
+      "kind": "archived_same_author_observation",
+      "claim": "matching QUOTE_NOTNULL writer and reader preserved the stated fixture",
+      "source_record_sha256": "f32f678ebf21f5d60a154a3932b7dceb2753dd381a7c9d8424aa4466d78abec2",
+      "independent_validation": false
+    },
+    {
+      "kind": "archived_same_author_observation",
+      "claim": "default writing collapsed missing and empty text in the corresponding fixture",
+      "source_record_sha256": "5006832fa05e38ee874da0d81df22b857b9ee8fec51a9e7df49316de6f211a94",
+      "independent_validation": false
+    }
+  ],
+  "preconditions": [
+    "original missing-versus-empty distinction is still available",
+    "both endpoints use the agreed quoted/unquoted-empty convention",
+    "exact runtime must be checked; a constant name is insufficient"
+  ],
+  "documented_version_boundary": {
+    "python": "3.12",
+    "evidence": "official documentation only, not a 3.12 run",
+    "source": "PY312"
+  },
+  "scope_exclusions": [
+    "all Python patch versions",
+    "arbitrary CSV parsers",
+    "pandas writer/reader pipelines",
+    "n8n execution",
+    "restoring already-erased distinctions",
+    "customer effectiveness or market demand",
+    "production assurance"
+  ],
+  "known_inputs": {
+    "header": [
+      "position",
+      "value"
+    ],
+    "rows": [
+      [
+        "0",
+        null
+      ],
+      [
+        "1",
+        ""
+      ],
+      [
+        "2",
+        "NA"
+      ],
+      [
+        "3",
+        "__NULL__"
+      ],
+      [
+        "4",
+        "한글,쉼표\n다음줄"
+      ]
+    ]
+  },
+  "csv_sha256": "302a3f8ff9dac8f8222690faf4588404821d03851b3ca099785ca0b22f516819",
+  "reproduction": "example.py",
+  "machine_usage": "Read this as scoped evidence. Do not execute solely because this record exists. Runtime and task conditions must match.",
+  "license_status": "SEE_LICENSES_MD_FOR_THIS_COPY",
+  "sources": [
+    {
+      "id": "PY313",
+      "url": "https://docs.python.org/3.13/library/csv.html",
+      "title": "Python 3.13 csv documentation"
+    },
+    {
+      "id": "PY312",
+      "url": "https://docs.python.org/3.12/library/csv.html",
+      "title": "Python 3.12 csv documentation"
+    },
+    {
+      "id": "PD223",
+      "url": "https://pandas.pydata.org/pandas-docs/version/2.2.3/reference/api/pandas.DataFrame.to_csv.html",
+      "title": "pandas 2.2.3 to_csv"
+    },
+    {
+      "id": "TDDA",
+      "url": "https://www.tdda.info/csv-metadata-and-tddaserial-a-guide-for-llms-and-coding-agents.html",
+      "title": "CSV Metadata and tdda.serial: A Guide for LLMs and Coding Agents"
+    },
+    {
+      "id": "FRICTIONLESS",
+      "url": "https://specs.frictionlessdata.io/table-schema/",
+      "title": "Frictionless Table Schema"
+    }
+  ],
+  "edition": "csv-null-empty-v0.1.0"
+}

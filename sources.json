@@ -1,0 +1,27 @@
+[
+  {
+    "id": "PY313",
+    "url": "https://docs.python.org/3.13/library/csv.html",
+    "title": "Python 3.13 csv documentation"
+  },
+  {
+    "id": "PY312",
+    "url": "https://docs.python.org/3.12/library/csv.html",
+    "title": "Python 3.12 csv documentation"
+  },
+  {
+    "id": "PD223",
+    "url": "https://pandas.pydata.org/pandas-docs/version/2.2.3/reference/api/pandas.DataFrame.to_csv.html",
+    "title": "pandas 2.2.3 to_csv"
+  },
+  {
+    "id": "TDDA",
+    "url": "https://www.tdda.info/csv-metadata-and-tddaserial-a-guide-for-llms-and-coding-agents.html",
+    "title": "CSV Metadata and tdda.serial: A Guide for LLMs and Coding Agents"
+  },
+  {
+    "id": "FRICTIONLESS",
+    "url": "https://specs.frictionlessdata.io/table-schema/",
+    "title": "Frictionless Table Schema"
+  }
+]
